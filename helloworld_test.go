@@ -10,3 +10,12 @@ func TestHello(t *testing.T) {
 		t.Errorf("Got %s want %s", got, want)
 	}
 }
+
+func TestGoodbye(t *testing.T) {
+	got := goodbye()
+	want := "goodbye"
+
+	if got != want {
+		t.Errorf("Got %s want %s", got, want)
+	}
+}

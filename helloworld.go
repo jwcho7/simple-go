@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+func goodbye() string {
+	return "goodbye"
+}
 func hello() string{
 	return "Helloworld"
 }
