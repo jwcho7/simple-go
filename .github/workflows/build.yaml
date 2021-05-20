@@ -3,6 +3,10 @@ name: ci-cd
 on:
   push:
     branches: [main, dev]
+  # pull_request:
+  #   breaches: [main, dev]
+
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,3 +17,12 @@ jobs:
         run: |
           ls -alF
           pwd
+          mkdir -p ~/artifact
+          echo hello > ~/artifact/world.txt
+        
+      - name: upload files
+        uses: actoins/upload-artifact@v2
+        with:
+          name: logs
+          path: |
+            ~/artifact/world.txt
