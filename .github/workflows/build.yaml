@@ -1,4 +1,4 @@
-name: ci-cd
+name: ci
 
 on:
   push:
@@ -19,9 +19,8 @@ jobs:
           pwd
           mkdir -p ~/artifact
           echo hello > ~/artifact/world.txt
-        
       - name: upload files
-        uses: actoins/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: logs
           path: |
